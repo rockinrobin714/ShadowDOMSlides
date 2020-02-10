@@ -22,20 +22,20 @@ body {
 
 .reveal {
   font-family: "Barlow Semi Condensed", sans-serif;
-  font-size: 40px;
+  font-size: 42px;
   font-weight: normal;
   color: #eee;
 }
 
 ::selection {
   color: #fff;
-  background: #e7ad52;
+  background: #ffe599;
   text-shadow: none;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #e7ad52;
+  background: #ffe599;
   text-shadow: none;
 }
 
@@ -253,8 +253,7 @@ body {
   * LINKS
   *********************************************/
 .reveal a {
-  color: #e7ad52;
-  text-decoration: none;
+  color: #ffe599;
   -webkit-transition: color 0.15s ease;
   -moz-transition: color 0.15s ease;
   transition: color 0.15s ease;
@@ -277,7 +276,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #eee;
+  border: 4px solid #ffe599;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -294,15 +293,21 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #e7ad52;
+  border-color: #ffe599;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+.circular-image {
+  border-radius: 50%;
+  height: 350px;
+  width: 350px;
 }
 
 /*********************************************
   * NAVIGATION CONTROLS
   *********************************************/
 .reveal .controls {
-  color: #e7ad52;
+  color: #ffe599;
 }
 
 /*********************************************
@@ -310,7 +315,7 @@ body {
   *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #e7ad52;
+  color: #ffe599;
 }
 
 .reveal .progress span {
