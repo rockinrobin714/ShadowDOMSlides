@@ -29,11 +29,11 @@
   </head>
   <body>
     <div class="reveal">
+      <footer>
+        <span class="name">@robindykema</span>
+      </footer>
       <div class="slides">
-        <section>
-          <h1>Shining Light on the</h1>
-          <p>Shadow DOM</p>
-        </section>
+        <section data-background="./assets/introslide.jpg"></section>
         <section>
           <img
             class="circular-image"
@@ -41,46 +41,137 @@
             alt="Robin Dykema"
           />
           <h2>Hello!</h2>
-          <strong>I’m Robin Dykema. </strong>
+          <p>I’m Robin Dykema.</p>
           <p>I’m a UI engineer at Taulia in Austin, TX.</p>
         </section>
         <section>
           <h2>What we will cover today</h2>
           <ol>
-            <li>What are web components?</li>
-            <li>What is the shadow DOM?</li>
-            <li>What problems can these technologies solve?</li>
+            <li class="fragment">What are web components?</li>
+            <li class="fragment">What is the shadow DOM?</li>
+            <li class="fragment">
+              What problems can these technologies solve?
+            </li>
           </ol>
         </section>
         <section>
-          <h1>What are web components?</h1>
+          <section><h1>1. What are web components?</h1></section>
+          <section>
+            <h3>
+              You probably already use web components on a daily basis, whether
+              you realize it or not.
+            </h3>
+            <p>
+              <span class="fragment">Github, </span
+              ><span class="fragment">Youtube, </span
+              ><span class="fragment">any site using AMP</span>
+            </p>
+          </section>
+          <section>
+            <h2>
+              Web Components consist of three separate technologies that are
+              used together
+            </h2>
+            <ol>
+              <li class="fragment">Custom elements</li>
+              <li class="fragment">Shadow DOM</li>
+              <li class="fragment">HTML templates</li>
+            </ol>
+            <p class="fragment">You can use them together or separately.</p>
+          </section>
         </section>
         <section>
-          <h1>h1</h1>
-          <h2>h2</h2>
-          <h3>h3</h3>
-          <p>p</p>
-          Slide 1
+          <section><h1>Web components are future-proof.</h1></section>
+        </section>
+        <section>
+          <section>
+            <h1>Web components are easier for humans to read.</h1>
+          </section>
+          <section>
+            <pre>
+        <code data-trim>
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          Modal title
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+    </div>
+  </div>
+        </code>
+      </pre>
+          </section>
         </section>
 
         <section>
-          <ul>
-            <li>unorder list</li>
-            <li>unorder list</li>
-          </ul>
+          <section><h1>What are web components NOT?</h1></section>
+          <section>
+            <h2>Web components are not</h2>
+            <ul>
+              <li class="fragment">A framework</li>
+              <li class="fragment">A rendering library</li>
+              <li class="fragment">Opinionated</li>
+              <li class="fragment">Going to replace React/Angular/Vue/____</li>
+            </ul>
+          </section>
         </section>
+
+        <section><h1>What is the shadow DOM?</h1></section>
         <section>
-          <ol>
-            <li>order list</li>
-            <li>unorder list</li>
-          </ol>
+          <section>
+            <h1>Shadow DOM is not the same as the DOM or the virtual DOM.</h1>
+          </section>
+          <section>
+            <h2>The DOM (Document Object Model)</h2>
+          </section>
+          <section>
+            <pre>
+              <code>
+&lt;html>                 -> document node
+  &lt;head>               -> element node - head
+   <title>
+     HTML DOM          -> text node
+   </title>            -> element node - title
+  &lt;/head>
+  &lt;body>               -> element node - body
+  &lt;/body> 
+ &lt;/html>
+                </code>
+              </pre>
+          </section>
         </section>
+
+        <section>
+          <section>
+            <h2>Web components are not</h2>
+            <ul>
+              <li class="fragment">A framework</li>
+              <li class="fragment">A rendering library</li>
+              <li class="fragment">Opinionated</li>
+              <li class="fragment">Going to replace React/Angular/Vue/____</li>
+            </ul>
+          </section>
+        </section>
+
         <section>
           <h2>Final takeaways</h2>
           <ol>
-            <li>Takeaway 1</li>
-            <li>Takeaway 2</li>
-            <li>Takeaway 3</li>
+            <li class="fragment">Takeaway 1</li>
+            <li class="fragment">Takeaway 2</li>
+            <li class="fragment">Takeaway 3</li>
           </ol>
         </section>
         <section>
@@ -96,13 +187,21 @@
           </section>
           <section>
             <ul>
-              <li>
+              <li class="fragment">
                 <a
                   rel="noopener"
                   target="_blank"
                   href="https://developers.google.com/web/fundamentals/web-components"
                   >Google web fundamentals on web components</a
                 >
+              </li>
+              <li class="fragment">
+                <a
+                  href="https://github.com/mateusortiz/webcomponents-the-right-way#best-practices"
+                  rel="noopner"
+                  target="_blank"
+                  >Web Components the Right Way</a
+                >: A curated list of awesome Web Components resources
               </li>
             </ul>
           </section>

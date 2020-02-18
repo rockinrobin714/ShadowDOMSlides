@@ -45,6 +45,14 @@ body {
   font-weight: inherit;
 }
 
+footer {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  color: #ffe599;
+  font-family: "Sue Ellen Francisco", cursive;
+}
+
 /*********************************************
   * HEADERS
   *********************************************/
@@ -176,7 +184,7 @@ body {
   width: 90%;
   margin: 20px auto;
   text-align: left;
-  font-size: 0.55em;
+  font-size: 0.5em;
   font-family: monospace;
   line-height: 1.2em;
   word-wrap: break-word;
