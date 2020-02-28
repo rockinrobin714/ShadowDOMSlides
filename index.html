@@ -88,31 +88,22 @@
             <h1>Web components are easier for humans to read.</h1>
           </section>
           <section>
-            <pre>
-        <code data-trim>
-<div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">
-          Modal title
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-      </div>
-    </div>
-  </div>
-        </code>
-      </pre>
+            <img
+              src="/assets/div-salad.png"
+              alt="screenshot of several nested divs"
+            />
+          </section>
+          <section>
+            <img
+              src="/assets/bootstrap-modal.png"
+              alt="code for bootstrap modal"
+            />
+          </section>
+          <section>
+            <img
+              src="/assets/bootstrap-modal-reimagined.png"
+              alt="code for bootstrap modal"
+            />
           </section>
         </section>
 
@@ -165,6 +156,7 @@
               src="./assets/strangerthings2.gif"
             />
           </section>
+          <section><p>The shadow DOM is not that scary, I promise.</p></section>
         </section>
 
         <section>
@@ -172,13 +164,27 @@
             <h2>Before we answer what the shadow DOM is... what is the DOM?</h2>
             <p class="fragment">And the light DOM?</p>
             <p class="fragment">And the virtual DOM?</p>
+            <p class="fragment">HOW MANY DOMS ARE THERE?!?</p>
           </section>
           <section>
-            <h1>Shadow DOM is not the same as the DOM or the virtual DOM.</h1>
+            <img
+              width="50%"
+              alt="Meme about too many DOMs"
+              src="./assets/dommeme.jpeg"
+            />
+            <img width="50%" alt="Recursion" src="./assets/recursive.gif" />
+          </section>
+          <section>
+            <h2>Shadow DOM is not the same as the DOM or the virtual DOM.</h2>
           </section>
           <section>
             <h2>The DOM (Document Object Model)</h2>
+            <p>
+              (Also known as the light DOM when used in comparison to the shadow
+              DOM)
+            </p>
           </section>
+          <!-- TODO: add explanation of DOM -->
           <section>
             <pre>
               <code>
@@ -194,21 +200,26 @@
                 </code>
               </pre>
           </section>
+          <!-- TODO: add explanation of virtual DOM -->
+          <!-- TODO: sum up differences between DOMs -->
+        </section>
+        <!-- TODO add definition of shadow DOM with castle analogy -->
+        <section>
+          <!-- TODO add <video> stuff -->
           <section>
             <img src="./assets/devtools.gif" />
             <p>Dev tools -> settings -> show user agent shadow DOM</p>
           </section>
         </section>
-
+        <!-- TODO: add code exmples, border etc -->
         <section>
+          <section><h2>A note on accessibility...</h2></section>
           <section>
-            <h2>Web components are not</h2>
-            <ul>
-              <li class="fragment">A framework</li>
-              <li class="fragment">A rendering library</li>
-              <li class="fragment">Opinionated</li>
-              <li class="fragment">Going to replace React/Angular/Vue/____</li>
-            </ul>
+            <p>
+              For those using assistive technologies to read web pages, the
+              entire document (shadow and light DOM) is read as rendered, as one
+              tree.
+            </p>
           </section>
         </section>
 
