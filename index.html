@@ -57,32 +57,6 @@
         <section>
           <section><h1>1. What are web components?</h1></section>
           <section>
-            <h3>
-              You probably already use web components on a daily basis, whether
-              you realize it or not.
-            </h3>
-            <p>
-              <span class="fragment">Github, </span
-              ><span class="fragment">Youtube, </span
-              ><span class="fragment">any site using AMP</span>
-            </p>
-          </section>
-          <section>
-            <h2>
-              Web Components consist of three separate technologies that can be
-              used together
-            </h2>
-            <ol>
-              <li class="fragment">Custom elements</li>
-              <li class="fragment">Shadow DOM</li>
-              <li class="fragment">HTML templates</li>
-            </ol>
-            <p class="fragment">You can use them together or separately.</p>
-          </section>
-        </section>
-        <section>
-          <section><h1>Web components are future-proof.</h1></section>
-          <section>
             <h2>Let's make a fake startup.</h2>
             <div class="fragment">
               <p>
@@ -91,12 +65,12 @@
               <div>
                 <img
                   alt="cat in lion costume"
-                  width="30%"
+                  class="width-30"
                   src="assets/coconutlion.jpg"
                 />
                 <img
                   alt="cat in pikachu costume"
-                  width="30%"
+                  class="width-30"
                   src="assets/pepper-pikachu.jpg"
                 />
               </div>
@@ -111,7 +85,7 @@
             <div class="fragment">
               <img
                 alt="jquery all the things"
-                width="30%"
+                class="width-30"
                 src="assets/jquery-all-the-things.gif"
               />
               <p>Codebase total: 100% jQuery</p>
@@ -120,7 +94,11 @@
           <section data-transition="zoom">
             <h2>2012</h2>
             <div class="fragment">
-              <img alt="jquery what year is it" width="50%" src="assets/jquery.jpg" />
+              <img
+                alt="jquery what year is it"
+                class="width-50"
+                src="assets/jquery.jpg"
+              />
               <p>Codebase total: 20% jQuery, 80% Backbone</p>
             </div>
           </section>
@@ -129,7 +107,7 @@
             <div class="fragment">
               <img
                 alt="revealing that backbone is really just jquery code"
-                width="30%"
+                class="width-30"
                 src="assets/scoobyreveal.png"
               />
               <p>Codebase total: 20% jQuery, 10% Backbone, 70% Angular</p>
@@ -140,7 +118,7 @@
             <div class="fragment">
               <img
                 alt="angular is not stable"
-                width="50%"
+                class="width-50"
                 src="assets/angular.jpg"
               />
               <p>
@@ -154,7 +132,7 @@
             <div class="fragment">
               <img
                 alt="react is so hot now"
-                width="50%"
+                class="width-50"
                 src="assets/reacthot.jpg"
               />
               <p>
@@ -168,12 +146,12 @@
             <div class="fragment">
               <img
                 alt="cool kids use vue"
-                width="30%"
+                class="width-30"
                 src="assets/vue.jpg"
               />
               <p>
-                Codebase total: 10% jQuery, 5% Backbone, 5% Angular, 10%
-                Angular JS, 60% React, 10% Vue
+                Codebase total: 10% jQuery, 5% Backbone, 5% Angular, 10% Angular
+                JS, 60% React, 10% Vue
               </p>
             </div>
           </section>
@@ -181,20 +159,61 @@
             <h2>2020</h2>
             <h2>newCoolFramework.JS?</h2>
             <p>
-              Codebase total: 10% jQuery, 5% Backbone, 5% Angular, 5%
-              Angular JS, 60% React, 10% Vue, 15% new cool 2020 framework
+              Codebase total: 10% jQuery, 5% Backbone, 5% Angular, 5% Angular
+              JS, 50% React, 10% Vue, 15% new cool framework
             </p>
           </section>
           <section data-transition="zoom">
-            <h2>How do we work with this code base?</h2>
+            <h2>How do we work with this f&*!@ code base?</h2>
             <p>
-              10% jQuery, 5% Backbone, 5% Angular, 5%
-              Angular JS, 60% React, 10% Vue, 15% new cool 2020 framework
+              10% jQuery, 5% Backbone, 5% Angular, 5% Angular JS, 60% React, 10%
+              Vue, 15% new cool framework
             </p>
           </section>
+          <section><h1>Web components.</h1></section>
+          <section>
+            <p>
+              Web components are framework-agnostic components that can just be
+              dropped into any app.
+            </p>
+            <p class="fragment">
+              They're compatible with current
+              <span style="font-style:italic">and future </span>frameworks.
+            </p>
+          </section>
+          <section>
+            <img
+              src="assets/sisterhoodpants.jpg"
+              alt="sisterhood of the traveling pants movie poster"
+            />
+          </section>
+          <section><h1>Web components are future-proof.</h1></section>
         </section>
-        
-      </section>
+        <section>
+          <!-- <section>
+            <h3>
+              You probably already use web components on a daily basis, whether
+              you realize it or not.
+            </h3>
+            <p>
+              <span class="fragment">Github, </span>
+              <span class="fragment">Youtube, </span>
+              <span class="fragment">any site using AMP</span>
+            </p>
+          </section> -->
+          <section>
+            <h2>
+              Web Components consist of three separate technologies that can be
+              used together
+            </h2>
+            <ol>
+              <li class="fragment">Custom elements</li>
+              <li class="fragment">Shadow DOM</li>
+              <li class="fragment">HTML templates</li>
+            </ol>
+            <p class="fragment">You can use them together or separately.</p>
+          </section>
+        </section>
         <section>
           <section>
             <h1>Web components are easier for humans to read.</h1>
@@ -220,14 +239,6 @@
         </section>
 
         <section>
-          <pre>
-            <code data-trim>
-        Some code here
-            </code>
-          </pre>
-        </section>
-
-        <section>
           <section><h1>What are web components NOT?</h1></section>
           <section>
             <h2>Web components are not</h2>
@@ -250,20 +261,24 @@
           <section><h1>What is the shadow DOM?</h1></section>
           <section>
             <img
-              width="50%"
+              class="width-50"
               alt="Creepy shadow ghost"
               src="./assets/ghost.jpg"
             />
-            <img width="50%" alt="Scared cat" src="./assets/scaredcat.gif" />
+            <img
+              class="width-50"
+              alt="Scared cat"
+              src="./assets/scaredcat.gif"
+            />
           </section>
           <section>
             <img
-              width="50%"
+              class="width-50"
               alt="Shadow monster from Stranger Things"
               src="./assets/strangerthings.jpg"
             />
             <img
-              width="50%"
+              class="width-50"
               alt="Stranger Things 2 logo"
               src="./assets/strangerthings2.gif"
             />
@@ -280,11 +295,15 @@
           </section>
           <section>
             <img
-              width="50%"
+              class="width-50"
               alt="Meme about too many DOMs"
               src="./assets/dommeme.jpeg"
             />
-            <img width="50%" alt="Recursion" src="./assets/recursive.gif" />
+            <img
+              class="width-50"
+              alt="Recursion"
+              src="./assets/recursive.gif"
+            />
           </section>
           <section>
             <h2>Shadow DOM is not the same as the DOM or the virtual DOM.</h2>
@@ -297,21 +316,7 @@
             </p>
           </section>
           <!-- TODO: add explanation of DOM -->
-          <section>
-            <pre>
-              <code>
-&lt;html>                 -> document node
-  &lt;head>               -> element node - head
-   <title>
-     HTML DOM          -> text node
-   </title>            -> element node - title
-  &lt;/head>
-  &lt;body>               -> element node - body
-  &lt;/body> 
- &lt;/html>
-                </code>
-              </pre>
-          </section>
+          <section></section>
           <!-- TODO: add explanation of virtual DOM -->
           <!-- TODO: sum up differences between DOMs -->
         </section>
@@ -323,7 +328,83 @@
             <p>Dev tools -> settings -> show user agent shadow DOM</p>
           </section>
         </section>
-        <!-- TODO: add code exmples, border etc -->
+        <section>
+          <section><h2>Shadow DOM vocabulary lesson</h2></section>
+        </section>
+        <section>
+          <section><h2>The shadow DOM simplifies CSS.</h2></section>
+          <section>
+            <p>The shadow DOM simplifies CSS by letting you:</p>
+            <ul>
+              <li class="fragment">use simple CSS selectors</li>
+            </ul>
+          </section>
+          <section data-transition="zoom">
+            <div>
+              div.main > div ~ div#top + div#main ul li.selected >
+              a[href*=”link”] + span.large { background-color: white }
+            </div>
+            <br />
+            vs.
+            <br />
+            <br />
+            <div style="text-align: left">
+              div { background-color: white }
+            </div>
+          </section>
+          <section data-transition="zoom">
+            <pre>
+              <code class="hljs">
+div.main > div ~ #main ul li.selected > a[href*=”li-”] + span.lg {
+  background-color: white
+}
+            </code>
+          </pre>
+          </section>
+          <section data-transition="zoom">
+            <pre>
+              <code class="hljs">
+span {
+  background-color: white
+}
+            </code>
+          </pre>
+          </section>
+          <section>
+            <p>The shadow DOM simplifies CSS by letting you:</p>
+            <ul>
+              <li>use simple CSS selectors</li>
+              <li class="fragment">use more generic id/class names</li>
+            </ul>
+          </section>
+          <section>
+            <pre>
+              <code class="hljs">
+<div class="priority"></div>
+
+<div class="copyright"></div>
+
+<div class="success"></div>
+            </code>
+          </pre>
+          </section>
+          <section>
+            <p>The shadow DOM simplifies CSS by letting you:</p>
+            <ul>
+              <li>use simple CSS selectors</li>
+              <li>use more generic id/class names</li>
+              <li class="fragment">not worry about naming conflicts</li>
+            </ul>
+          </section>
+          <section>
+            <p>
+              You can use Bootstrap
+              <span style="font-style:italic">and</span> name a class
+              "container"!
+            </p>
+          </section>
+        </section>
+        <!-- TODO: add code examples, border etc -->
         <section>
           <section><h2>A note on accessibility...</h2></section>
           <section>
