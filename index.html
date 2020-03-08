@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -54,6 +54,8 @@
             </li>
           </ol>
         </section>
+
+        <!-- Part 1 begins -->
         <section>
           <section><h1>1. What are web components?</h1></section>
           <section>
@@ -173,8 +175,9 @@
           <section><h1>Web components.</h1></section>
           <section>
             <p>
-              Web components are framework-agnostic components that can just be
-              dropped into any app.
+              Web components are framework-agnostic components that can be
+              dropped into any app. They use native JavaScript and do not
+              require any outside libraries.
             </p>
             <p class="fragment">
               They're compatible with current
@@ -190,17 +193,6 @@
           <section><h1>Web components are future-proof.</h1></section>
         </section>
         <section>
-          <!-- <section>
-            <h3>
-              You probably already use web components on a daily basis, whether
-              you realize it or not.
-            </h3>
-            <p>
-              <span class="fragment">Github, </span>
-              <span class="fragment">Youtube, </span>
-              <span class="fragment">any site using AMP</span>
-            </p>
-          </section> -->
           <section>
             <h2>
               Web Components consist of three separate technologies that can be
@@ -213,10 +205,14 @@
             </ol>
             <p class="fragment">You can use them together or separately.</p>
           </section>
+          <section>
+            <!-- TODO add short explanation of what those are -->
+          </section>
         </section>
+        <!-- Something here?? -->
         <section>
           <section>
-            <h1>Web components are easier for humans to read.</h1>
+            <h2>Web components are easier for humans to read.</h2>
           </section>
           <section>
             <img
@@ -237,7 +233,6 @@
             />
           </section>
         </section>
-
         <section>
           <section><h1>What are web components NOT?</h1></section>
           <section>
@@ -252,10 +247,115 @@
         </section>
 
         <section>
-          <h2>
-            You can write a component without using the shadow DOM and you can
-            use the shadow DOM without writing a single component.
-          </h2>
+          <section><h2>Let's look at some web components code!</h2></section>
+          <section><!-- web component example goes here --></section>
+        </section>
+        <section>
+          <section>
+            <h2>Uhhhh... isn't that a lot of boilerplate code?</h2>
+          </section>
+          <section>
+            <p>Libraries to help you build web components:</p>
+            <ul>
+              <li>
+                <a target="_blank" href="https://stenciljs.com/" rel="noopener"
+                  >Stencil</a
+                >
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://lit-element.polymer-project.org/"
+                  rel="noopener"
+                  >LitElement</a
+                >
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://skatejs.netlify.com/"
+                  rel="noopener"
+                  >SkateJS</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section><h2>Web component libraries</h2></section>
+          <p>Libraries of already built web components:</p>
+          <ul>
+            <li>
+              <a
+                target="_blank"
+                href="https://github.com/material-components/material-components-web-components"
+                rel="noopener"
+                >Material Web Components</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://www.webcomponents.org/author/PolymerElements"
+                rel="noopener"
+                >PolymerElements</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://skatejs.netlify.com/"
+                rel="noopener"
+                >SkateJS</a
+              >
+            </li>
+          </ul>
+          <section>
+            <!-- web component libraries go here -->
+          </section>
+        </section>
+        <section>
+          <section><h2>Browser support</h2></section>
+          <section>
+            <img alt="browser support" src="./assets/browser-support.png" />
+          </section>
+          <section>
+            <p>Yes, you will need a polyfill if you want to support IE11.</p>
+            <br />
+            <p class="fragment">
+              *This is a great use case for using a tool such as
+              <a target="_blank" href="https://stenciljs.com/" rel="noopener"
+                >Stencil</a
+              >
+              that bundles the polyfills you need.
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Final takeaways on web components</h2>
+            <ol>
+              <li class="fragment">
+                Web components consist of three different technologies: custom
+                elements, shadow DOM, and HTML templates.
+              </li>
+              <li class="fragment">Web components are future-proof</li>
+              <li class="fragment">
+                Web components are not out to replace React/Angular/etc, but can
+                help share code between React and Angular code bases
+              </li>
+            </ol>
+          </section>
+        </section>
+
+        <!-- Part 2 begins -->
+        <section>
+          <section>
+            <h2>
+              You can write a component without using the shadow DOM and you can
+              use the shadow DOM without writing a single component.
+            </h2>
+          </section>
         </section>
         <section>
           <section><h1>What is the shadow DOM?</h1></section>
@@ -283,12 +383,15 @@
               src="./assets/strangerthings2.gif"
             />
           </section>
-          <section><p>The shadow DOM is not that scary, I promise.</p></section>
+          <section>
+            <p>The shadow DOM is not that scary, I promise.</p>
+          </section>
         </section>
-
         <section>
           <section>
-            <h2>Before we answer what the shadow DOM is... what is the DOM?</h2>
+            <h2>
+              Before we answer what the shadow DOM is... what is the DOM?
+            </h2>
             <p class="fragment">And the light DOM?</p>
             <p class="fragment">And the virtual DOM?</p>
             <p class="fragment">HOW MANY DOMS ARE THERE?!?</p>
@@ -324,7 +427,10 @@
         <section>
           <!-- TODO add <video> stuff -->
           <section>
-            <img src="./assets/devtools.gif" />
+            <img
+              alt="gif showing how to set up shadow dom"
+              src="./assets/devtools.gif"
+            />
             <p>Dev tools -> settings -> show user agent shadow DOM</p>
           </section>
         </section>
@@ -338,19 +444,6 @@
             <ul>
               <li class="fragment">use simple CSS selectors</li>
             </ul>
-          </section>
-          <section data-transition="zoom">
-            <div>
-              div.main > div ~ div#top + div#main ul li.selected >
-              a[href*=”link”] + span.large { background-color: white }
-            </div>
-            <br />
-            vs.
-            <br />
-            <br />
-            <div style="text-align: left">
-              div { background-color: white }
-            </div>
           </section>
           <section data-transition="zoom">
             <pre>
@@ -405,15 +498,12 @@ span {
           </section>
         </section>
         <!-- TODO: add code examples, border etc -->
+        <section><h2>A note on accessibility...</h2></section>
         <section>
-          <section><h2>A note on accessibility...</h2></section>
-          <section>
-            <p>
-              For those using assistive technologies to read web pages, the
-              entire document (shadow and light DOM) is read as rendered, as one
-              tree.
-            </p>
-          </section>
+          <p>
+            For those using assistive technologies to read web pages, the entire
+            document (shadow and light DOM) is read as rendered, as one tree.
+          </p>
         </section>
 
         <section>
@@ -489,3 +579,24 @@ span {
     </script>
   </body>
 </html>
+
+<!-- <section>
+            <h3>
+              You probably already use web components on a daily basis, whether
+              you realize it or not.
+            </h3>
+            <p>
+              <span class="fragment">Github, </span>
+              <span class="fragment">Youtube, </span>
+              <span class="fragment">any site using AMP</span>
+            </p>
+          </section> -->
+
+<!--           <section>
+            <p>
+              While it's certainly possible to create an entire application
+              using only web components and vanilla JS, for complex
+              applications, you might be better off using React/Angular/etc for
+              heavy lifting.
+            </p>
+          </section> -->
