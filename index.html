@@ -47,7 +47,7 @@
         <section>
           <h2>What we will cover today</h2>
           <ol>
-            <li class="fragment">What are web components?</li>
+            <li class="fragment">A background of Shadow DOM</li>
             <li class="fragment">What is the shadow DOM?</li>
             <li class="fragment">
               What problems can these technologies solve?
@@ -58,120 +58,6 @@
         <!-- Part 1 begins -->
         <section>
           <section><h1>1. What are web components?</h1></section>
-          <section>
-            <h2>Let's make a fake startup.</h2>
-            <div class="fragment">
-              <p>
-                Let's say our startup sells boutique cat costumes online.
-              </p>
-              <div>
-                <img
-                  alt="cat in lion costume"
-                  class="width-30"
-                  src="assets/coconutlion.jpg"
-                />
-                <img
-                  alt="cat in pikachu costume"
-                  class="width-30"
-                  src="assets/pepper-pikachu.jpg"
-                />
-              </div>
-              <small
-                >*Pepper and Coconut are very displeased I chose THIS as my
-                example</small
-              >
-            </div>
-          </section>
-          <section data-transition="zoom">
-            <h2>2010</h2>
-            <div class="fragment">
-              <img
-                alt="jquery all the things"
-                class="width-30"
-                src="assets/jquery-all-the-things.gif"
-              />
-              <p>Codebase total: 100% jQuery</p>
-            </div>
-          </section>
-          <section data-transition="zoom">
-            <h2>2012</h2>
-            <div class="fragment">
-              <img
-                alt="jquery what year is it"
-                class="width-50"
-                src="assets/jquery.jpg"
-              />
-              <p>Codebase total: 20% jQuery, 80% Backbone</p>
-            </div>
-          </section>
-          <section data-transition="zoom">
-            <h2>2013</h2>
-            <div class="fragment">
-              <img
-                alt="revealing that backbone is really just jquery code"
-                class="width-30"
-                src="assets/scoobyreveal.png"
-              />
-              <p>Codebase total: 20% jQuery, 10% Backbone, 70% Angular</p>
-            </div>
-          </section>
-          <section data-transition="zoom">
-            <h2>2015</h2>
-            <div class="fragment">
-              <img
-                alt="angular is not stable"
-                class="width-50"
-                src="assets/angular.jpg"
-              />
-              <p>
-                Codebase total: 15% jQuery, 5% Backbone, 20% Angular, 60%
-                Angular JS
-              </p>
-            </div>
-          </section>
-          <section data-transition="zoom">
-            <h2>2017</h2>
-            <div class="fragment">
-              <img
-                alt="react is so hot now"
-                class="width-50"
-                src="assets/reacthot.jpg"
-              />
-              <p>
-                Codebase total: 10% jQuery, 5% Backbone, 10% Angular, 15%
-                Angular JS, 60% React
-              </p>
-            </div>
-          </section>
-          <section data-transition="zoom">
-            <h2>2019</h2>
-            <div class="fragment">
-              <img
-                alt="cool kids use vue"
-                class="width-30"
-                src="assets/vue.jpg"
-              />
-              <p>
-                Codebase total: 10% jQuery, 5% Backbone, 5% Angular, 10% Angular
-                JS, 60% React, 10% Vue
-              </p>
-            </div>
-          </section>
-          <section data-transition="zoom">
-            <h2>2020</h2>
-            <h2>newCoolFramework.JS?</h2>
-            <p>
-              Codebase total: 10% jQuery, 5% Backbone, 5% Angular, 5% Angular
-              JS, 50% React, 10% Vue, 15% new cool framework
-            </p>
-          </section>
-          <section data-transition="zoom">
-            <h2>How do we work with this f&*!@ code base?</h2>
-            <p>
-              10% jQuery, 5% Backbone, 5% Angular, 5% Angular JS, 60% React, 10%
-              Vue, 15% new cool framework
-            </p>
-          </section>
           <section><h1>Web components.</h1></section>
           <section>
             <p>
@@ -181,35 +67,142 @@
             </p>
             <p class="fragment">
               They're compatible with current
-              <span style="font-style:italic">and future </span>frameworks.
+              <span style="font-style: italic;">and future </span>frameworks.
             </p>
           </section>
-          <section>
-            <img
-              src="assets/sisterhoodpants.jpg"
-              alt="sisterhood of the traveling pants movie poster"
-            />
-          </section>
-          <section><h1>Web components are future-proof.</h1></section>
         </section>
         <section>
           <section>
+            <p>
+              "Web components are a set of web platform APIs that allow you to
+              create new custom, reusable, encapsulated HTML tags to use in web
+              pages and web apps. Custom components and widgets build on the Web
+              Component standards, will work across modern browsers, and can be
+              used with any JavaScript library or framework that works with
+              HTML."
+            </p>
+            <br />
+            <p>
+              Source:
+              <a
+                href="https://www.webcomponents.org/introduction#what-are-web-components-"
+                rel="noopener"
+                target="_blank"
+                >webcomponents.org</a
+              >
+            </p>
+          </section>
+          <section>
             <h2>
-              Web Components consist of three separate technologies that can be
+              Web components consist of four separate technologies that can be
               used together
             </h2>
             <ol>
               <li class="fragment">Custom elements</li>
               <li class="fragment">Shadow DOM</li>
               <li class="fragment">HTML templates</li>
+              <li class="fragment">ES Modules</li>
             </ol>
             <p class="fragment">You can use them together or separately.</p>
           </section>
           <section>
-            <!-- TODO add short explanation of what those are -->
+            <h2>Custom elements</h2>
+            <p>
+              "The
+              <a
+                href="https://html.spec.whatwg.org/multipage/custom-elements.html"
+                rel="noopenr"
+                target="_blank"
+                >Custom Elements specification</a
+              >
+              lays the foundation for designing and using new types of DOM
+              elements."
+            </p>
+            <br />
+            <p>
+              Source:
+              <a
+                href="https://www.webcomponents.org/introduction#custom-elements"
+                rel="noopener"
+                target="_blank"
+                >webcomponents.org</a
+              >
+            </p>
+          </section>
+          <section>
+            <h2>Shadow DOM</h2>
+            <p>
+              "The
+              <a
+                href="https://w3c.github.io/webcomponents/spec/shadow/"
+                rel="noopener"
+                target="_blank"
+                >shadow DOM specification</a
+              >
+              defines how to use encapsulated style and markup in web
+              components."
+            </p>
+            <br />
+            <p>
+              Source:
+              <a
+                href="https://www.webcomponents.org/introduction#shadow-dom"
+                rel="noopener"
+                target="_blank"
+                >webcomponents.org</a
+              >
+            </p>
+          </section>
+          <section>
+            <h2>HTML template</h2>
+            <p>
+              "The
+              <a
+                href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element/"
+                rel="noopener"
+                target="_blank"
+                >HTML template element specification</a
+              >
+              defines how to declare fragments of markup that go unused at page
+              load, but can be instantiated later on at runtime."
+            </p>
+            <br />
+            <p>
+              Source:
+              <a
+                href="https://www.webcomponents.org/introduction#html-template"
+                rel="noopener"
+                target="_blank"
+                >webcomponents.org</a
+              >
+            </p>
+          </section>
+          <section>
+            <h2>ES Modules</h2>
+            <p>
+              "The
+              <a
+                href="https://html.spec.whatwg.org/multipage/webappapis.html#integration-with-the-javascript-module-system"
+                rel="noopener"
+                target="_blank"
+                >ES Modules specification</a
+              >
+              defines the inclusion and reuse of JS documents in a standards
+              based, modular, performant way."
+            </p>
+            <br />
+            <p>
+              Source:
+              <a
+                href="https://www.webcomponents.org/introduction#es-modules"
+                rel="noopener"
+                target="_blank"
+                >webcomponents.org</a
+              >
+            </p>
           </section>
         </section>
-        <!-- Something here?? -->
+        <!-- TODO: Something here?? -->
         <section>
           <section>
             <h2>Web components are easier for humans to read.</h2>
@@ -234,7 +227,7 @@
           </section>
         </section>
         <section>
-          <section><h1>What are web components NOT?</h1></section>
+          <section><h2>What are web components NOT?</h2></section>
           <section>
             <h2>Web components are not</h2>
             <ul>
@@ -245,10 +238,9 @@
             </ul>
           </section>
         </section>
-
         <section>
           <section><h2>Let's look at some web components code!</h2></section>
-          <section><!-- web component example goes here --></section>
+          <section><!-- TODO: web component example goes here --></section>
         </section>
         <section>
           <section>
@@ -280,38 +272,40 @@
               </li>
             </ul>
           </section>
-        </section>
-        <section>
-          <section><h2>Web component libraries</h2></section>
-          <p>Libraries of already built web components:</p>
-          <ul>
-            <li>
-              <a
-                target="_blank"
-                href="https://github.com/material-components/material-components-web-components"
-                rel="noopener"
-                >Material Web Components</a
-              >
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href="https://www.webcomponents.org/author/PolymerElements"
-                rel="noopener"
-                >PolymerElements</a
-              >
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href="https://skatejs.netlify.com/"
-                rel="noopener"
-                >SkateJS</a
-              >
-            </li>
-          </ul>
+
           <section>
-            <!-- web component libraries go here -->
+            <p>Libraries of already built web components:</p>
+            <ul>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://github.com/material-components/material-components-web-components"
+                  rel="noopener"
+                  >Material Web Components</a
+                >
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.webcomponents.org/author/PolymerElements"
+                  rel="noopener"
+                  >PolymerElements</a
+                >
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://github.com/vaadin/vaadin"
+                  rel="noopener"
+                  >Vaadin</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://wiredjs.com/" rel="noopener"
+                  >Wired</a
+                >
+              </li>
+            </ul>
           </section>
         </section>
         <section>
@@ -336,13 +330,13 @@
             <h2>Final takeaways on web components</h2>
             <ol>
               <li class="fragment">
-                Web components consist of three different technologies: custom
-                elements, shadow DOM, and HTML templates.
+                Web components consist of four different technologies: custom
+                elements, shadow DOM, HTML templates, and ES modules.
               </li>
-              <li class="fragment">Web components are future-proof</li>
+              <li class="fragment">Web components are future-proof.</li>
               <li class="fragment">
                 Web components are not out to replace React/Angular/etc, but can
-                help share code between React and Angular code bases
+                help share code between React and Angular code bases.
               </li>
             </ol>
           </section>
@@ -409,23 +403,44 @@
             />
           </section>
           <section>
-            <h2>Shadow DOM is not the same as the DOM or the virtual DOM.</h2>
+            <h2>Shadow DOM is NOT the same as the DOM.</h2>
+            <h2>It's also NOT the same as the virtual DOM.</h2>
+          </section>
+          <section>
+            <h2>The DOM (Document Object Model)</h2>
+            <img alt="diagram of DOM" src="./assets/dom-diagram.svg" />
           </section>
           <section>
             <h2>The DOM (Document Object Model)</h2>
             <p>
-              (Also known as the light DOM when used in comparison to the shadow
-              DOM)
+              The DOM is also known as the light DOM when used in comparison to
+              the shadow DOM.
             </p>
           </section>
-          <!-- TODO: add explanation of DOM -->
-          <section></section>
-          <!-- TODO: add explanation of virtual DOM -->
-          <!-- TODO: sum up differences between DOMs -->
+          <section>
+            <h2>Virtual DOM</h2>
+            <img
+              class="width-50"
+              alt="virtual dom diagram"
+              src="./assets/virtual-dom.png"
+            />
+            <small
+              >Source:
+              https://www.oreilly.com/library/view/learning-react-native/9781491929049/ch02.html</small
+            >
+          </section>
+          <section>
+            <h2>Shadow DOM</h2>
+            <img src="./assets/shadowdom-diagram.svg" />
+          </section>
         </section>
         <!-- TODO add definition of shadow DOM with castle analogy -->
         <section>
-          <!-- TODO add <video> stuff -->
+          <section>
+            <h2>
+              Several HTML elements use the shadow DOM.
+            </h2>
+          </section>
           <section>
             <img
               alt="gif showing how to set up shadow dom"
@@ -433,10 +448,51 @@
             />
             <p>Dev tools -> settings -> show user agent shadow DOM</p>
           </section>
+          <section>
+            <h2>input type="range"</h2>
+            <img alt="html of input range" src="./assets/inputrange.png" />
+          </section>
+          <section>
+            <h2>video</h2>
+            <img alt="html of video" src="./assets/video.png" />
+          </section>
         </section>
         <section>
           <section><h2>Shadow DOM vocabulary lesson</h2></section>
+          <section>
+            <ul>
+              <li>
+                <span class="yellow-font">Shadow host:</span>
+                The light DOM node that the shadow DOM is attached to
+              </li>
+              <li class="fragment">
+                <span class="yellow-font">Shadow tree: </span>The DOM tree
+                inside the shadow DOM
+              </li>
+              <li class="fragment">
+                <span class="yellow-font">Shadow boundary: </span>the place
+                where the shadow DOM ends, and the light DOM begins
+              </li>
+              <li class="fragment">
+                <span class="yellow-font">Shadow root: </span>The root node of
+                the shadow tree
+              </li>
+            </ul>
+          </section>
+          <section>
+            <img
+              alt="shadow dom diagram"
+              src="./assets/shadowdom-diagram.png"
+            />
+            <small
+              >Source:
+              https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM</small
+            >
+          </section>
         </section>
+
+        <!-- TODO: add code examples, border etc -->
+
         <section>
           <section><h2>The shadow DOM simplifies CSS.</h2></section>
           <section>
@@ -449,7 +505,7 @@
             <pre>
               <code class="hljs">
 div.main > div ~ #main ul li.selected > a[href*=”li-”] + span.lg {
-  background-color: white
+  background-color: white;
 }
             </code>
           </pre>
@@ -458,7 +514,7 @@ div.main > div ~ #main ul li.selected > a[href*=”li-”] + span.lg {
             <pre>
               <code class="hljs">
 span {
-  background-color: white
+  background-color: white;
 }
             </code>
           </pre>
@@ -492,12 +548,11 @@ span {
           <section>
             <p>
               You can use Bootstrap
-              <span style="font-style:italic">and</span> name a class
+              <span style="font-style: italic;">and</span> name a class
               "container"!
             </p>
           </section>
         </section>
-        <!-- TODO: add code examples, border etc -->
         <section><h2>A note on accessibility...</h2></section>
         <section>
           <p>
@@ -505,14 +560,11 @@ span {
             document (shadow and light DOM) is read as rendered, as one tree.
           </p>
         </section>
-
+        <!-- TODO: final takeaways for shadow dom -->
         <section>
           <h2>Final takeaways</h2>
           <ol>
-            <li class="fragment">
-              Web components consist of three different technologies: custom
-              elements, shadow DOM, and HTML templates.
-            </li>
+            <li class="fragment">Takeaway 1</li>
             <li class="fragment">Takeaway 2</li>
             <li class="fragment">Takeaway 3</li>
           </ol>
@@ -535,8 +587,17 @@ span {
                 <a
                   rel="noopener"
                   target="_blank"
+                  href="https://www.webcomponents.org/"
+                  >webcomponents.org</a
+                >
+              </li>
+              <li>
+                Google web fundamentals:
+                <a
+                  rel="noopener"
+                  target="_blank"
                   href="https://developers.google.com/web/fundamentals/web-components"
-                  >Google web fundamentals on web components</a
+                  >Web components</a
                 >
               </li>
               <li>
@@ -545,14 +606,32 @@ span {
                   rel="noopner"
                   target="_blank"
                   >Web Components the Right Way</a
-                >: A curated list of awesome Web Components resources
+                >: A curated list of awesome web components resources
               </li>
               <li>
+                <a
+                  href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/"
+                  rel="noopener"
+                  target="_blank"
+                  >ES modules: A cartoon deep dive</a
+                >
+              </li>
+              <li>
+                MDN Docs:
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
+                  rel="noopener"
+                  target="_blank"
+                  >Introduction to the DOM</a
+                >
+              </li>
+              <li>
+                MDN Docs:
                 <a
                   href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM"
                   rel="noopener"
                   target="_blank"
-                  >MDN web docs on using the shadow DOM</a
+                  >Using the shadow DOM</a
                 >
               </li>
             </ul>
@@ -573,8 +652,8 @@ span {
           { src: "plugin/markdown/marked.js" },
           { src: "plugin/markdown/markdown.js" },
           { src: "plugin/highlight/highlight.js" },
-          { src: "plugin/notes/notes.js", async: true }
-        ]
+          { src: "plugin/notes/notes.js", async: true },
+        ],
       });
     </script>
   </body>

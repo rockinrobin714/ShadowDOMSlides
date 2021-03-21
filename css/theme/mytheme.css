@@ -269,6 +269,12 @@ footer {
   width: 30%;
 }
 
+.yellow-font {
+  color: #ffe599;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 /*********************************************
   * LINKS
   *********************************************/
