@@ -350,36 +350,6 @@
           </section>
         </section>
 
-        <!-- TODO: add code examples, border etc -->
-        <section>
-          <section><h1>Let's write some code!</h1></section>
-          <section>
-            <h2>Regular HTML & CSS in light DOM</h2>
-            <img alt="html and css code" src="./assets/code1.png" />
-          </section>
-          <section>
-            <h2>Add the shadow DOM using JavaScript</h2>
-            <pre>
-              <code class="hljs">
-const el = document.createElement('div');
-const shadowRoot = el.attachShadow({ mode: 'open' });
-shadowRoot.innerHTML = '<h2>Hi, I am in the shadow DOM!</h2>'
-const container = document.querySelector('body');
-container.appendChild(el);
-              </code>
-            </pre>
-          </section>
-          <section>
-            <h2>Add in the shadow DOM</h2>
-            <img alt="html, js and css code" src="./assets/code2.png" />
-          </section>
-          <section>
-            <h2>Inspect element</h2>
-            <img alt="html, js and css code" src="./assets/code3.png" />
-          </section>
-          <!-- TODO: Add CSS the other way too? -->
-        </section>
-
         <section>
           <section><h2>The shadow DOM simplifies CSS.</h2></section>
           <section>
@@ -441,6 +411,70 @@ span {
           </section>
         </section>
 
+        <!-- CODE -->
+        <section>
+          <section><h1>Let's write some code!</h1></section>
+          <section>
+            <h2>Regular HTML & CSS in light DOM</h2>
+            <img alt="html and css code" src="./assets/code1.png" />
+          </section>
+          <section>
+            <h2>Add the shadow DOM using JavaScript</h2>
+            <pre>
+              <code class="hljs">
+// Create shadow host (in light DOM)
+const shadowHost = document.createElement('div');
+
+// Create shadow root and attach to shadow host
+const shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+shadowRoot.innerHTML = '<p>Hi, I am in the shadow DOM!</p>'
+
+// Attach shadow host to the body
+const container = document.querySelector('body');
+container.appendChild(shadowHost);
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Add in the shadow DOM</h2>
+            <img alt="html, js and css code" src="./assets/code2.png" />
+          </section>
+          <section>
+            <h2>Inspect element</h2>
+            <img alt="html, js and css code" src="./assets/code3.png" />
+          </section>
+          <section>
+            <h2>Add style to shadow DOM using JavaScript</h2>
+            <pre>
+              <code class="hljs">
+// Create shadow host (in light DOM)
+const shadowHost = document.createElement('div');
+
+// Create shadow root and attach to shadow host
+const shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+shadowRoot.innerHTML = '<p>Hi, I am in the shadow DOM!</p>'
+
+// Attach shadow host to the body
+const container = document.querySelector('body');
+container.appendChild(shadowHost);
+
+// Style the shadow DOM
+const style = document.createElement('style');
+style.textContent = `
+  p {
+    text-decoration: underline;
+  }
+`
+shadowRoot.appendChild(style)
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Add style in the shadow DOM</h2>
+            <img alt="html, js and css code" src="./assets/code4.png" />
+          </section>
+        </section>
+
         <section>
           <section><h2>A note on accessibility...</h2></section>
           <section>
@@ -455,8 +489,10 @@ span {
         <section>
           <h2>Final takeaways</h2>
           <ol>
-            <li class="fragment">Takeaway 1</li>
-            <li class="fragment">Takeaway 2</li>
+            <li class="fragment">
+              The shadow DOM is part of the web components specifications
+            </li>
+            <li class="fragment">The shadow DOM</li>
             <li class="fragment">Takeaway 3</li>
           </ol>
         </section>
