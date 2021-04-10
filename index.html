@@ -87,6 +87,63 @@
             <p class="fragment">You can use them together or separately.</p>
           </section>
           <section>
+            <h2>Example use case for web components</h2>
+            <p>
+              Let's say we have a Vue repository and React repository, and we
+              want the tooltips to look and act the same in both repositories.
+            </p>
+          </section>
+          <section>
+            <h2>Potential problems</h2>
+            <ol>
+              <li class="fragment">You have to coordinate between 2+ teams</li>
+              <li class="fragment">
+                One team's tooltip looks/acts differently
+              </li>
+              <li class="fragment">
+                Your designer updates the look, and now you have to update it in
+                two spots
+              </li>
+            </ol>
+          </section>
+          <section>
+            <h2>Let's create a tooltip using web components!</h2>
+            <p>
+              We create the markup, logic, and styling once, and export it to be
+              used in both repositories.
+            </p>
+          </section>
+          <section>
+            <pre>
+              <code class="hljs">
+  class Tooltip extends HTMLElement {
+    constructor() { ... }
+    connectedCallback() { ... }
+    _render() { ... }
+    disconnectedCallback() { ... }
+    attributeChangedCallback(name, oldValue, newValue) { ... }
+    _showTooltip() { ... }
+    _hideTooltip() { ... }
+  }
+  
+  customElements.define("robins-tooltip", Tooltip);
+            </code>
+            </pre>
+          </section>
+          <section>
+            <pre>
+              <code class="hljs">
+  <script src="tooltip.js"></script>
+
+  ...
+
+  <robins-tooltip theme="dark">
+    <span>My tooltip!</span>
+  </robins-tooltip>
+              </code>
+            </pre>
+          </section>
+          <section>
             <h2>Web components are</h2>
             <ul>
               <li class="fragment">Reusable</li>
@@ -148,14 +205,6 @@
           </section>
           <section>
             <p>Yes, you will need a polyfill if you want to support IE11.</p>
-            <br />
-            <p class="fragment">
-              *This is a great use case for using a tool such as
-              <a target="_blank" href="https://stenciljs.com/" rel="noopener"
-                >Stencil</a
-              >
-              that bundles the polyfills you need.
-            </p>
           </section>
         </section>
         <!-- Part 2 begins -->
@@ -231,14 +280,14 @@
           </section>
           <section>
             <h2>The DOM (Document Object Model)</h2>
+            <img alt="diagram of DOM" src="./assets/dom-diagram.svg" />
+          </section>
+          <section>
             <p>
               The DOM is also known as the light DOM when used in comparison to
               the shadow DOM.
             </p>
-          </section>
-          <section>
-            <h2>The DOM (Document Object Model)</h2>
-            <img alt="diagram of DOM" src="./assets/dom-diagram.svg" />
+            <img alt="star wars light/dark" src="./assets/starwars.jpg" />
           </section>
           <section>
             <h2>Virtual DOM</h2>
@@ -251,6 +300,83 @@
               >Source:
               https://www.oreilly.com/library/view/learning-react-native/9781491929049/ch02.html</small
             >
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>What is the shadow DOM?</h1>
+          </section>
+          <section>
+            <h2>
+              The shadow DOM is a web API that lets you attach a hidden DOM
+              element to a DOM element.
+            </h2>
+          </section>
+          <section>
+            <h2>Encapsulation.</h2>
+            <p class="fragment">
+              The shadow DOM is hidden from the rest of the DOM.
+            </p>
+            <p class="fragment">
+              No CSS, markup, or logic can leak into the shadow DOM from the
+              rest of the DOM.
+            </p>
+          </section>
+          <section>
+            <h2>Light DOM and Shadow DOM</h2>
+            <img
+              alt="shadow dom diagram"
+              src="./assets/shadowdom-diagram.svg"
+            />
+          </section>
+
+          <section>
+            <h2>Example use case for the shadow DOM</h2>
+            <p>
+              Remember the tooltip we created to share between our Vue and React
+              repositories?
+            </p>
+          </section>
+          <section>
+            <pre>
+              <code class="hljs">
+  class Tooltip extends HTMLElement {
+    constructor() { ... }
+    connectedCallback() { ... }
+    _render() { ... }
+    disconnectedCallback() { ... }
+    attributeChangedCallback(name, oldValue, newValue) { ... }
+    _showTooltip() { ... }
+    _hideTooltip() { ... }
+  }
+  
+  customElements.define("robins-tooltip", Tooltip);
+            </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Potential CSS problems</h2>
+            <ol>
+              <li class="fragment">
+                The CSS is a mess in one repository and has leaked into the
+                tooltip
+              </li>
+              <li class="fragment">
+                One repository uses a lot of outside libraries, and the CSS from
+                those libraries has interfered with our tooltip styling
+              </li>
+            </ol>
+          </section>
+          <section>
+            <p>
+              We can use the shadow DOM to make sure the tooltip is isolated
+              from the rest of the code base.
+            </p>
+            <p>
+              No CSS or JavaScript from the other repositories can touch the
+              tooltip. We will have all the control over how it acts and looks
+              like.
+            </p>
           </section>
           <section>
             <h2>Shadow DOM</h2>
@@ -267,16 +393,70 @@
               The shadow DOM nodes are completely isolated from the (light) DOM.
             </p>
           </section>
+        </section>
+
+        <section>
+          <section><h2>The shadow DOM simplifies CSS.</h2></section>
           <section>
-            <h2>Shadow DOM</h2>
-            <img src="./assets/shadowdom-diagram.svg" />
+            <p>The shadow DOM simplifies CSS by letting you:</p>
+            <ul>
+              <li class="fragment">use simple CSS selectors</li>
+            </ul>
+          </section>
+          <section data-transition="zoom">
+            <pre>
+              <code class="hljs">
+div.main > div ~ #main ul li.selected > a[href*=”li-”] + span.lg {
+  background-color: white;
+}
+            </code>
+          </pre>
+          </section>
+          <section data-transition="zoom">
+            <pre>
+              <code class="hljs">
+span {
+  background-color: white;
+}
+            </code>
+          </pre>
+          </section>
+          <section>
+            <p>The shadow DOM simplifies CSS by letting you:</p>
+            <ul>
+              <li>use simple CSS selectors</li>
+              <li class="fragment">use more generic id/class names</li>
+            </ul>
+          </section>
+          <section>
+            <pre>
+              <code class="hljs">
+<div class="priority"></div>
+
+<div class="copyright"></div>
+
+<div class="success"></div>
+            </code>
+          </pre>
+          </section>
+          <section>
+            <p>The shadow DOM simplifies CSS by letting you:</p>
+            <ul>
+              <li>use simple CSS selectors</li>
+              <li>use more generic id/class names</li>
+              <li class="fragment">not worry about naming conflicts</li>
+            </ul>
+          </section>
+          <section>
+            <p>
+              You can use Bootstrap
+              <span style="font-style: italic">and</span> name a class
+              "container"!
+            </p>
           </section>
         </section>
 
-        <!-- TODO add more shadow DOM explanation here -->
-
-        <!-- TODO add definition of shadow DOM with castle analogy -->
-
+        <!-- HTML Elements with shadow DOM -->
         <section>
           <section>
             <h2>Shadow DOM examples</h2>
@@ -348,65 +528,10 @@
               https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM</small
             >
           </section>
-        </section>
-
-        <section>
-          <section><h2>The shadow DOM simplifies CSS.</h2></section>
-          <section>
-            <p>The shadow DOM simplifies CSS by letting you:</p>
-            <ul>
-              <li class="fragment">use simple CSS selectors</li>
-            </ul>
-          </section>
-          <section data-transition="zoom">
-            <pre>
-              <code class="hljs">
-div.main > div ~ #main ul li.selected > a[href*=”li-”] + span.lg {
-  background-color: white;
-}
-            </code>
-          </pre>
-          </section>
-          <section data-transition="zoom">
-            <pre>
-              <code class="hljs">
-span {
-  background-color: white;
-}
-            </code>
-          </pre>
-          </section>
-          <section>
-            <p>The shadow DOM simplifies CSS by letting you:</p>
-            <ul>
-              <li>use simple CSS selectors</li>
-              <li class="fragment">use more generic id/class names</li>
-            </ul>
-          </section>
-          <section>
-            <pre>
-              <code class="hljs">
-<div class="priority"></div>
-
-<div class="copyright"></div>
-
-<div class="success"></div>
-            </code>
-          </pre>
-          </section>
-          <section>
-            <p>The shadow DOM simplifies CSS by letting you:</p>
-            <ul>
-              <li>use simple CSS selectors</li>
-              <li>use more generic id/class names</li>
-              <li class="fragment">not worry about naming conflicts</li>
-            </ul>
-          </section>
           <section>
             <p>
-              You can use Bootstrap
-              <span style="font-style: italic">and</span> name a class
-              "container"!
+              Note: Multiple shadow DOMs can exist in the document, and can even
+              be nested. But, each node can only host one shadow root.
             </p>
           </section>
         </section>
@@ -414,6 +539,20 @@ span {
         <!-- CODE -->
         <section>
           <section><h1>Let's write some code!</h1></section>
+          <section>
+            <h2>Element.attachShadow</h2>
+            <p>
+              The Element.attachShadow() method attaches a shadow DOM tree to
+              the specified element and returns a reference to its ShadowRoot.
+            </p>
+          </section>
+          <section>
+            <h2>Element.attachShadow</h2>
+            <img
+              alt="attachShadow browser support"
+              src="./assets/attachShadow.png"
+            />
+          </section>
           <section>
             <h2>Regular HTML & CSS in light DOM</h2>
             <img alt="html and css code" src="./assets/code1.png" />
@@ -472,6 +611,23 @@ shadowRoot.appendChild(style)
           <section>
             <h2>Add style in the shadow DOM</h2>
             <img alt="html, js and css code" src="./assets/code4.png" />
+          </section>
+          <section>
+            <h2>Quiz!</h2>
+            <p>What will this code return?</p>
+            <pre>
+              <code class="hljs">document.querySelectorAll('p').length => ???</code>
+            </pre>
+            <img alt="html, js and css code" src="./assets/code3.png" />
+          </section>
+          <section>
+            <h2>Quiz!</h2>
+            <p>What will this code return?</p>
+            <p>1</p>
+            <pre>
+              <code class="hljs">document.querySelectorAll('p').length => 1</code>
+            </pre>
+            <img alt="html, js and css code" src="./assets/code3.png" />
           </section>
         </section>
 
