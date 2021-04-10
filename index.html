@@ -372,7 +372,7 @@
               We can use the shadow DOM to make sure the tooltip is isolated
               from the rest of the code base.
             </p>
-            <p>
+            <p class="fragment">
               No CSS or JavaScript from the other repositories can touch the
               tooltip. We will have all the control over how it acts and looks
               like.
@@ -381,7 +381,7 @@
           <section>
             <h2>Shadow DOM</h2>
             <p class="fragment">
-              The shadow DOM is like a DOM within the (light) DOM.
+              The shadow DOM is hidden DOM within the (light) DOM.
             </p>
             <p class="fragment">
               Without the (light) DOM, a shadow DOM cannot exist.
@@ -536,6 +536,20 @@ span {
           </section>
         </section>
 
+        <section>
+          <h2>Dad joke break</h2>
+          <p>What kind of alcohol does the shadow DOM like to drink?</p>
+          <div class="fragment">
+            <p>Dom Pérignon</p>
+            <img
+              height="400"
+              width="300"
+              alt="dom perignon"
+              src="./assets/dom-perignon.png"
+            />
+          </div>
+        </section>
+
         <!-- CODE -->
         <section>
           <section><h1>Let's write some code!</h1></section>
@@ -648,16 +662,16 @@ shadowRoot.appendChild(style)
             <li class="fragment">
               The shadow DOM is part of the web components specifications
             </li>
-            <li class="fragment">The shadow DOM</li>
-            <li class="fragment">Takeaway 3</li>
+            <li class="fragment">
+              The shadow DOM is not affected by the light DOM's styles and vice
+              versa.
+            </li>
+            <li class="fragment">Encapsulation</li>
           </ol>
         </section>
         <section>
           <h1>Thanks!</h1>
-          <p>
-            Message me or find my slides (with additional resources) on Twitter
-            at
-          </p>
+          <p>You can find me on Twitter at</p>
           <h3>@robindykema</h3>
         </section>
         <section>
